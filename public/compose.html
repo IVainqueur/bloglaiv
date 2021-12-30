@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>compose | Blog.La.IV🤓</title>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./public/compose.css">
+</head>
+<body>
+    <div id="NavBar">
+        <h1 id="HomeBTN">Blog.La.IV🤓</h1>
+        <div class="Menu">
+            <h3>search</h3>
+            <h3 style="color: #666666; transform: scale(1.09);" id="ComposeBTN">compose</h3>
+        </div>
+    </div>
+    <div id="Composition">
+        <div class="TitleOfBlog">
+            <input type="text" placeholder="Title of the blog" id="TitleOfBlogInput">
+            <p></p>
+        </div>
+        <input type="file" id="MainPicUrl" placeholder="Main photo url" name="file">
+        <textarea id="BlogContent" cols="30" rows="10" placeholder="Content of the blog..."></textarea>
+        <button id="PostBTN">POST</button>
+    </div>
+    <div id="Edits">
+        <div class="">
+            <div class="Icon" title="Bold" id="BoldIcon">B</div>
+        </div>
+        <div class="">
+            <div class="Icon" title="Italics" id="ItalicsIcon"><i>i</i></div>
+        </div>
+        <div class="">
+            <div class="Icon" title="Add link" id="LinkIcon"><img src="/public/link.svg" alt=""></div>
+        </div>
+        <!-- <div class="Option">
+            <span>Bold</span>
+            <span class="Icon">+</span>
+        </div> -->
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+    let UPLOAD_PRESET = "prwfi0t5"
+    let CLOUDINARY_URL = "https://api.cloudinary.com/v1_1/dyrneab5i/image/upload"
+
+
+    document.querySelector('.TitleOfBlog p').textContent = Date().slice(4, 15)
+    // document.querySelector('#MainPicUrl').addEventListener('change', (e)=>{
+    //     )
+
+
+    // })
+    
+    document.querySelector("#PostBTN").addEventListener('click', ()=>{
+        if(document.querySelector('#MainPicUrl').files[0] == undefined) return alert('Choose a profile pic')
+        let formData = new FormData()
+        formData.append('file', document.querySelector('#MainPicUrl').files[0])
+        formData.append('title', document.querySelector('#TitleOfBlogInput').value)
+        formData.append('content', document.querySelector('#BlogContent').value)
+        formData.append('date', document.querySelector('.TitleOfBlog p').textContent)
+        fetch('http://bloglaiv.herokuapp.com/uploadBlog', {
+            method: 'POST',
+            headers: {},
+            body: formData
+        })
+    })
+
+    let theIcons = [["BoldIcon", "**", "bold"], ["ItalicsIcon", "*", "italic"], ["LinkIcon", "~", "link"]]
+    for(let icon of theIcons){
+        document.querySelector(`#${icon[0]}`).addEventListener('click', ()=>{
+            document.querySelector('#BlogContent').value += ` ${icon[1]}${icon[2]} text${icon[1]}`
+        })
+    }
+    const setLinks = ()=>{
+        let theClickables = [["#HomeBTN", "http://bloglaiv.herokuapp.com"], ["#ComposeBTN", "http://bloglaiv.herokuapp.com/compose"]]
+        for(let one of theClickables){
+            document.querySelector(one[0]).addEventListener('click', ()=>{
+                location.href = one[1]
+            })
+        }
+    }
+    setLinks()
+</script>
+</html>

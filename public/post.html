@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>compose | Blog.La.IV🤓</title>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../public/compose.css">
+</head>
+<body>
+    <div id="NavBar">
+        <h1 id="HomeBTN">Blog.La.IV🤓</h1>
+        <div class="Menu">
+            <h3>search</h3>
+            <h3 id="ComposeBTN">compose</h3>
+        </div>
+    </div>
+    <div id="Composition">
+        <div class="TitleOfBlog" style="width: 100%; margin-top: 20px;">
+            <h1 id="TitleOfBlogInput"></h1>
+            <p style="padding-left: 0;"></p>
+        </div>
+        <img id="MainPicUrl" alt="Main photo url" src="../public/loading.gif" style="padding: 40px 30%;">
+        <div id="BlogContent" style="height: fit-content;"></div>
+        <!-- <button id="PostBTN">POST</button> -->
+    </div>
+    
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+    $.ajax({
+        url: location.href,
+        method: "POST",
+        success: (res)=>{
+            console.log(res)
+            // Populate the blog content
+            document.querySelector('#TitleOfBlogInput').textContent = res.title
+            document.querySelector('.TitleOfBlog p').textContent = res.date
+            document.querySelector('#MainPicUrl').src = res.profileLink
+            document.querySelector('#MainPicUrl').style = ""
+            document.querySelector('#BlogContent').textContent = res.content
+
+        },
+        error: (err)=>{
+            console.log(err)
+        }
+    })
+    const setLinks = ()=>{
+        let theClickables = [["#HomeBTN", "http://bloglaiv.herokuapp.com"], ["#ComposeBTN", "http://bloglaiv.herokuapp.com/compose"]]
+        for(let one of theClickables){
+            document.querySelector(one[0]).addEventListener('click', ()=>{
+                location.href = one[1]
+            })
+        }
+    }
+    setLinks()
+</script>
+</html>

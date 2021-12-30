@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <title>Home | Blog.La.IV🤓</title>
+    <link rel="stylesheet" href="./public/style.css">
+</head>
+<body>
+    <div id="NavBar">
+        <h1 id="HomeBTN">Blog.La.IV🤓</h1>
+        <div class="Menu">
+            <h3>search</h3>
+            <h3 id="ComposeBTN">compose</h3>
+        </div>
+    </div>
+    <div id="Bio">
+        <div id="Text">
+            <h2>Quick Bio...</h2>
+            <p>The name's <span style="font-family: 'Righteous', sans-serif; font-weight: bold;">ISHIMWE Vainqueur</span>. A <span id="Age"></span>-year-old developer confident in Javascript, python and some Kotlin. Passionate about all things coding and always thirsty for more.</p>
+        </div>
+        <img src="./public/profile.jpg" alt="My pic">
+    </div>
+    <div id="Blogs">
+        <h2>Some Blogs</h2>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="./public/fApp.js"></script>
+<script>
+    let one = Date.parse(new Date("April 14, 2005"))
+    let two = Date.parse(Date())
+    document.querySelector('#Age').textContent = Math.floor((((((two - one)/ 1000)/60)/60)/24)/360)
+</script>
+</html>

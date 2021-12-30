@@ -1,0 +1,114 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    height: 100vh;
+    width: 100%;
+    background-color: #f6f6f6;
+}
+
+h1, h2, h3, h4{
+    font-family: 'Righteous', sans-serif;
+}
+
+#NavBar{
+    background-color: #ffffff;
+    /* border-bottom: 1px solid gray; */
+    width: 100%;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.Menu{
+    display: flex;
+    
+}
+.Menu h3{
+    color: #a8a8a8;
+    margin-left: 40px;
+    cursor: pointer;
+}
+
+#Bio{
+    margin: 60px auto;
+    background: #ffffff;
+    height: 300px;
+    width: 700px;
+    border-radius: 7px;
+    box-shadow: 0px 0px 15px #a8a8a8a8;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#Bio img{
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+    transform: translate(50px, -50px);
+    border-radius: 7px;
+    box-shadow: 0px 0px 15px #a8a8a8a8;
+}
+
+#Bio #Text{
+    padding: 40px;
+}
+
+#Bio #Text p{
+    margin-top: 40px;
+}
+
+#Blogs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 100px;
+}
+
+.Card{
+    height: 150px;
+    width: 700px;
+    background: white;
+    border-radius: 7px;
+    box-shadow: 0px 0px 15px #a8a8a8a8;
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    margin-top: 30px;
+    transition: .3s ease;
+    cursor: pointer;
+}
+
+.Card:hover{
+    transform: scale(1.009);
+}
+
+.Card img{
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    border-radius: 7px;
+    box-shadow: 0px 0px 15px #a8a8a8a8;
+    transform: translate(-20px, -20px);
+}
+
+.Card .CardText{
+    padding: 20px;
+}
+
+.Card .CardText p{
+    margin-top: 20px;
+    color: #a8a8a8;
+}
+.Card .CardText h3{
+    text-transform: capitalize;
+}
+
+#Bio #Text p{
+    line-height: 20px;
+}
