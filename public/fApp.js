@@ -1,3 +1,6 @@
+if(location.href.match(/https/)) location.href = "http:" + location.href.slice(6)
+
+
 class blogCard{
     constructor (toLeft, title, summary, src, link){
         this.card = document.createElement('div')

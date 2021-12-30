@@ -43,6 +43,7 @@
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script>
+    if(location.href.match(/https/)) location.href = "http:" + location.href.slice(6)
     let UPLOAD_PRESET = "prwfi0t5"
     let CLOUDINARY_URL = "https://api.cloudinary.com/v1_1/dyrneab5i/image/upload"
 
