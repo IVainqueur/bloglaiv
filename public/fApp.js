@@ -55,6 +55,7 @@ const appendBlogs = (theBlogs)=>{
 }
 
 const getPosts = ()=>{
+    console.log("called")
     $.ajax({
         url: "http://bloglaiv.herokuapp.com/getPosts",
         method: "get",

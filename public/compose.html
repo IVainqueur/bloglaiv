@@ -69,7 +69,7 @@
         })
     })
 
-    let theIcons = [["BoldIcon", "**", "bold"], ["ItalicsIcon", "*", "italic"], ["LinkIcon", "~", "link"]]
+    let theIcons = [["BoldIcon", "|*|", "bold"], ["ItalicsIcon", "\\*\\", "italic"], ["LinkIcon", "**", "link"]]
     for(let icon of theIcons){
         document.querySelector(`#${icon[0]}`).addEventListener('click', ()=>{
             document.querySelector('#BlogContent').value += ` ${icon[1]}${icon[2]} text${icon[1]}`
