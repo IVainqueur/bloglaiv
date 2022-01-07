@@ -62,11 +62,15 @@
         formData.append('title', document.querySelector('#TitleOfBlogInput').value)
         formData.append('content', document.querySelector('#BlogContent').value)
         formData.append('date', document.querySelector('.TitleOfBlog p').textContent)
-        fetch('http://bloglaiv.herokuapp.com/uploadBlog', {
-            method: 'POST',
-            headers: {},
-            body: formData
-        })
+        if(prompt("Password please:") == "ThePassword"){
+            fetch('http://bloglaiv.herokuapp.com/uploadBlog', {
+                method: 'POST',
+                headers: {},
+                body: formData
+            })
+        }else{
+            alert("Invalid Password")
+        }
     })
 
     let theIcons = [["BoldIcon", "|*|", "bold text"], ["ItalicsIcon", "\\*\\", "italic text"], ["LinkIcon", "**", "innerHTML/http://example.com"]]
