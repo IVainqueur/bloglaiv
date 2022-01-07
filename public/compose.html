@@ -69,10 +69,10 @@
         })
     })
 
-    let theIcons = [["BoldIcon", "|*|", "bold"], ["ItalicsIcon", "\\*\\", "italic"], ["LinkIcon", "**", "link"]]
+    let theIcons = [["BoldIcon", "|*|", "bold text"], ["ItalicsIcon", "\\*\\", "italic text"], ["LinkIcon", "**", "innerHTML/http://example.com"]]
     for(let icon of theIcons){
         document.querySelector(`#${icon[0]}`).addEventListener('click', ()=>{
-            document.querySelector('#BlogContent').value += ` ${icon[1]}${icon[2]} text${icon[1]}`
+            document.querySelector('#BlogContent').value += ` ${icon[1]}${icon[2]}${icon[1]}`
         })
     }
     const setLinks = ()=>{
