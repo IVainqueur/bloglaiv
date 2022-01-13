@@ -46,15 +46,15 @@
             document.querySelector('#BlogContent').textContent = res.content
             setTimeout(()=>{
                 console.log('Checking for links')
-                document.querySelector('#BlogContent').innerHTML = document.querySelector('#BlogContent').textContent.replace(/(\~)(((\w+)?\s?(\w+))+)\/(((https|http)\:\/\/(\w+)?\.?\w+\.\w+)((\/(\w+))+)?(?=\~))(\~)/gi, `<a href="$6">$2</a>`)
+                document.querySelector('#BlogContent').innerHTML = document.querySelector('#BlogContent').innerHTML.replace(/(\~)(((\w+)?\s?(\w+))+)\/(((https|http)\:\/\/(\w+)?\.?\w+\.\w+)((\/(\w+))+)?(?=\~))(\~)/gi, `<a href="$6">$2</a>`)
             }, 1000)
             setTimeout(()=>{
                 console.log('Checking for bolds')
-                document.querySelector('#BlogContent').innerHTML = document.querySelector('#BlogContent').textContent.replace(/(\|\*\|)((\s?(\w+))+)(?=\|\*\|)(\|\*\|)/gi, "<b>$2</b>")
+                document.querySelector('#BlogContent').innerHTML = document.querySelector('#BlogContent').innerHTML.replace(/(\|\*\|)((\s?(\w+))+)(?=\|\*\|)(\|\*\|)/gi, "<b>$2</b>")
             }, 1000)
             setTimeout(()=>{
                 console.log("Checking for italics")
-                document.querySelector('#BlogContent').innerHTML = document.querySelector('#BlogContent').textContent.replace(/(\\\\\*\\\\)(((\w+)\s?(\w+))+)(?=\\\\\*\\\\)(\\\\\*\\\\)/gi, "<i>$2</i>")
+                document.querySelector('#BlogContent').innerHTML = document.querySelector('#BlogContent').innerHTML.replace(/(\\\\\*\\\\)(((\w+)\s?(\w+))+)(?=\\\\\*\\\\)(\\\\\*\\\\)/gi, "<i>$2</i>")
             }, 1000)
             document.querySelector('#BlogContent').innerHTML = res.content
         },
