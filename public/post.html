@@ -43,7 +43,7 @@
             document.querySelector('.TitleOfBlog p').textContent = res.date
             document.querySelector('#MainPicUrl').src = res.profileLink
             document.querySelector('#MainPicUrl').style = ""
-            // document.querySelector('#BlogContent').innerHTML = res.content.replace(/(\~)(((\w+)?\s?(\w+))+)\/(((https|http)\:\/\/(\w+)?\.?\w+\.\w+)((\/(\w+))+)?(?=\~))(\~)/gi, `<a href="$6">$2</a>`).replace(/(\|\*\|)((\s?(\w+))+)(?=\|\*\|)(\|\*\|)/gi, "<b>$2</b>").replace(/(\\\\\*\\\\)(((\w+)\s?(\w+))+)(?=\\\\\*\\\\)(\\\\\*\\\\)/gi, "<i>$2</i>")
+            document.querySelector('#BlogContent').innerHTML = res.content
             res.content = res.content.replace(/(\~)(((\w+)?\s?(\w+))+)\/(((https|http)\:\/\/(\w+)?\.?\w+\.\w+)((\/(\w+))+)?(?=\~))(\~)/gi, `<a href="$6">$2</a>`)
             res.content = res.content.replace(/(\|\*\|)((\s?(\w+))+)(?=\|\*\|)(\|\*\|)/gi, "<b>$2</b>")
             res.content = res.content.replace(/(\\\\\*\\\\)(((\w+)\s?(\w+))+)(?=\\\\\*\\\\)(\\\\\*\\\\)/gi, "<i>$2</i>")
