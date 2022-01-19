@@ -54,7 +54,7 @@
             }, 1000)
             setTimeout(()=>{
                 console.log("Checking for italics")
-                document.querySelector('#BlogContent').innerHTML = document.querySelector('#BlogContent').innerHTML.replace(/\/\/\*\/\/((.)*)\/\/\*\/\//gi, "<i>$2</i>")
+                document.querySelector('#BlogContent').innerHTML = document.querySelector('#BlogContent').innerHTML.replace(/\\\\\*\\\\((.)*)\\\\\*\\\\/gi, "<i>$2</i>")
             }, 1000)
             document.querySelector('#BlogContent').innerHTML = res.content
         },
