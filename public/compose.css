@@ -148,3 +148,7 @@ a{
     color: black;
     border-bottom: 2px solid gray;
 }
+
+#HomeBTN{
+    cursor: pointer;
+}
