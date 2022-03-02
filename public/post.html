@@ -45,6 +45,10 @@
             document.querySelector('#MainPicUrl').style = ""
             document.querySelector('#BlogContent').textContent = res.content
             setTimeout(()=>{
+                console.log('Checking for codes')
+                document.querySelector('#BlogContent').innerHTML = document.querySelector('#BlogContent').innerHTML.replace(/\|~\|(.{2,})\|~\|/gi, `<pre><code>$1</code></pre>`)
+            }, 1000)
+            setTimeout(()=>{
                 console.log('Checking for links')
                 document.querySelector('#BlogContent').innerHTML = document.querySelector('#BlogContent').innerHTML.replace(/(\*\*)(.{2,}?)\\(.{2,}?)(\*\*)/gi, `<a href="$2">$3</a>`)
             }, 1000)
@@ -55,6 +59,7 @@
             setTimeout(()=>{
                 console.log("Checking for italics")
                 document.querySelector('#BlogContent').innerHTML = document.querySelector('#BlogContent').innerHTML.replace(/(\\\\\*\\\\)(.{2,}?)(\\\\\*\\\\)/gi, "<i>$2</i>")
+                document.querySelector('#BlogContent').innerHTML = document.querySelector('#BlogContent').innerHTML.replace(/(\\\\\*\\\\)(.{2,}?)(\\\*\\)/gi, "<i>$2</i>")
             }, 1000)
             document.querySelector('#BlogContent').innerHTML = res.content
         },
