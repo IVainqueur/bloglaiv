@@ -46,7 +46,7 @@
             document.querySelector('#BlogContent').textContent = res.content
             setTimeout(()=>{
                 console.log('Checking for codes')
-                document.querySelector('#BlogContent').innerHTML = res.content.replace(/\|\~\|(((\n)*(.{2,})?((\n)))+?)(\|\/~\|)/gi, `<pre class='prettyprint'>$1</pre>>`)
+                document.querySelector('#BlogContent').innerHTML = res.content.replace(/\|\~\|(((\n)*(.{2,})?((\n)))+?)(\|\/~\|)/gi, `<xmp class='prettyprint'>$1</xmp>`)
             }, 1000)
             setTimeout(()=>{
                 console.log('Checking for links')
