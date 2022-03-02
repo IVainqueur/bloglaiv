@@ -35,6 +35,9 @@
         <div class="">
             <div class="Icon" title="Add link" id="LinkIcon"><img src="/public/link.svg" alt=""></div>
         </div>
+        <div class="">
+            <div class="Icon" title="Code" id="CodeIcon"><i>C</i></div>
+        </div>
         <!-- <div class="Option">
             <span>Bold</span>
             <span class="Icon">+</span>
@@ -73,10 +76,14 @@
         }
     })
 
-    let theIcons = [["BoldIcon", "|*|", "bold text"], ["ItalicsIcon", "\\*\\", "italic text"], ["LinkIcon", "**", "innerHTML/http://example.com"]]
+    let theIcons = [["BoldIcon", "|*|", "bold text"], ["ItalicsIcon", "\\*\\", "italic text"], ["LinkIcon", "**", "innerHTML/http://example.com"], ["CodeIcon", "|~|", "Code"]]
     for(let icon of theIcons){
         document.querySelector(`#${icon[0]}`).addEventListener('click', ()=>{
-            document.querySelector('#BlogContent').value += ` ${icon[1]}${icon[2]}${icon[1]}`
+            if(icon[2]=='Code'){
+                document.querySelector('#BlogContent').value += `\n ${icon[1]}${icon[2]}${icon[1]}`
+            }else{
+                document.querySelector('#BlogContent').value += ` ${icon[1]}${icon[2]}${icon[1]}`
+            }
         })
     }
     const setLinks = ()=>{
