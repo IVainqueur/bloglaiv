@@ -80,7 +80,7 @@
     for(let icon of theIcons){
         document.querySelector(`#${icon[0]}`).addEventListener('click', ()=>{
             if(icon[2]=='Code'){
-                document.querySelector('#BlogContent').value += `\n ${icon[1]}${icon[2]}${icon[1]}`
+                document.querySelector('#BlogContent').value += `\n ${icon[1]}${icon[2]}|/~|`
             }else{
                 document.querySelector('#BlogContent').value += ` ${icon[1]}${icon[2]}${icon[1]}`
             }
