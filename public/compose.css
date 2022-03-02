@@ -159,7 +159,7 @@ a{
 }
 
 ::-webkit-scrollbar-thumb{
-    background: black;
+    background: #ffffff4f;
     border-radius: 10px;
 }
 ::-webkit-scrollbar-button{
@@ -175,4 +175,6 @@ xmp{
     font-family: monospace;
     background: #1d1b31;
     color: white;
+    overflow: scroll;
+    max-height: 500px;
 }
