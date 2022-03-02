@@ -152,3 +152,27 @@ a{
 #HomeBTN{
     cursor: pointer;
 }
+
+
+::-webkit-scrollbar{
+    border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb{
+    background: black;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-button{
+    background: rgba(255,255,255,0.6);
+    /* border-radius: 10px; */
+}
+
+::-webkit-scrollbar-corner{
+    background: rgba(255, 255, 255, 0);
+}
+
+xmp{
+    font-family: monospace;
+    background: #1d1b31;
+    color: white;
+}
