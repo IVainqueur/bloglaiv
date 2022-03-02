@@ -46,7 +46,7 @@
             document.querySelector('#BlogContent').textContent = res.content
             setTimeout(()=>{
                 console.log('Checking for codes')
-                document.querySelector('#BlogContent').innerHTML = res.content.replace(/\|\~\|(((\n)*(.{2,})?((\n)))+?)(\|\/~\|)/gi, `<xmp>$1</xmp>`)
+                document.querySelector('#BlogContent').innerHTML = res.content.replace(/\|\~\|(((\n)*(.{2,})?((\n)))+?)(\|\/~\|)/gi, `<xmpc class='prettyprint'>$1</xmp>`)
             }, 1000)
             setTimeout(()=>{
                 console.log('Checking for links')
@@ -77,4 +77,5 @@
     }
     setLinks()
 </script>
+<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
 </html>
