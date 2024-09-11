@@ -9,7 +9,7 @@ const cloudinary = require('cloudinary').v2
 const eUpload = require('express-fileupload')
 const mongo = require('mongoose')
 
-mongo.connect('mongodb+srv://iv_mongodb_1:kungfupanda1@nodeiv.umn7l.mongodb.net/myBlog?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true }, (err)=>{
+mongo.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true }, (err)=>{
     if(err) return console.log('#FailedConnectionToDB')
     console.log('#ConnectedToDB')
 })
