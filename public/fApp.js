@@ -28,7 +28,7 @@ class blogCard{
     listen(link){
         this.card.addEventListener("click", ()=>{
             // console.log(link)
-            location.href = `http://bloglaiv.herokuapp.com/post/${link}`
+            location.href = `/post/${link}`
         })
     }
 }
@@ -38,7 +38,7 @@ let toLeft = true
 
 const getBlogSummaries = ()=>{
     $.ajax({
-        url: "http://bloglaiv.herokuapp.com/getSummaries",
+        url: "/getSummaries",
         method: "GET",
         success: (res)=>{
             if("#Error") return alert('Something went wrong mn...')
@@ -57,7 +57,7 @@ const appendBlogs = (theBlogs)=>{
 const getPosts = ()=>{
     console.log("called")
     $.ajax({
-        url: "http://bloglaiv.herokuapp.com/getPosts",
+        url: "/getPosts",
         method: "get",
         success: (res)=>{
             console.log(res)
