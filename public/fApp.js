@@ -1,4 +1,4 @@
-if(location.href.match(/https/)) location.href = "http:" + location.href.slice(6)
+// if(location.href.match(/https/)) location.href = "http:" + location.href.slice(6)
 
 
 class blogCard{
