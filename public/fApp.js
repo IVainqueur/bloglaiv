@@ -72,7 +72,7 @@ const getPosts = ()=>{
 getPosts()
 
 const setLinks = ()=>{
-    let theClickables = [["#HomeBTN", "http://bloglaiv.herokuapp.com"], ["#ComposeBTN", "http://bloglaiv.herokuapp.com/compose"]]
+    let theClickables = [["#HomeBTN", "/"], ["#ComposeBTN", "/compose"]]
     for(let one of theClickables){
         document.querySelector(one[0]).addEventListener('click', ()=>{
             location.href = one[1]
